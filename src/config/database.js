@@ -1,20 +1,9 @@
 const { Sequelize} = require('sequelize');
 require("dotenv").config();
 
-const host =process.env.HOST;
-const user = process.env.USER;
-const password = process.env.PASSWORD;
-const database = process.env.DATABASE;
+const URI = process.env.URI;
 
-const sequelize = new Sequelize(
-    database,
-    user,
-    password,
-    {
-        host,
-        dialect:"mysql"
-    }
-)
+const sequelize = new Sequelize(URI)
 
 const dbConnectMySQL = async () => {
     try {
